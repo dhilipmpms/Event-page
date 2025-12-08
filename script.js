@@ -49,34 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Form Submission (Mock)
-    const registerForm = document.getElementById('register-form');
 
-    if (registerForm) {
-        registerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(registerForm);
-            const data = Object.fromEntries(formData.entries());
-
-            console.log('Form Submitted:', data);
-
-            // Show success message (simple alert for now, or replace form content)
-            const container = registerForm.parentElement;
-            container.innerHTML = `
-                <div class="text-center p-12" style="background-color: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: var(--radius);">
-                    <div style="width: 4rem; height: 4rem; background-color: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                        <svg width="32" height="32" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                    </div>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">Thank You</h3>
-                    <p style="color: hsl(var(--muted-foreground));">We've received your inquiry and will be in touch within 24 hours.</p>
-                </div>
-            `;
-        });
-    }
 
     // Hero Slider Logic
     const initHeroSlider = () => {
@@ -139,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Auto Play
         const startTimer = () => {
-            slideInterval = setInterval(nextSlide, 3000);
+            slideInterval = setInterval(nextSlide, 7000);
         };
 
         const resetTimer = () => {
