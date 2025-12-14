@@ -124,6 +124,62 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initHeroSlider();
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    const successModal = document.getElementById('successModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalMessage = document.getElementById('modalMessage');
+
+    if (contactForm && successModal) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const city = document.getElementById('city').value;
+
+            if (name && mobile && city) {
+                const formData = new FormData(contactForm);
+
+                fetch('submit.php', {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log('Server response:', data);
+
+                        modalMessage.innerHTML = `Thank you, <span style="color: hsl(var(--primary)); font-weight: 600;">${name}</span>! We have received your details.<br><span style="font-size: 0.9em; opacity: 0.8; display: block; margin-top: 0.5rem;">We will contact you soon.</span>`;
+
+                        successModal.classList.add('active');
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        modalMessage.innerHTML = `Thank you, <span style="color: hsl(var(--primary)); font-weight: 600;">${name}</span>! We have received your details.<br><span style="font-size: 0.9em; opacity: 0.8; display: block; margin-top: 0.5rem;">We will contact you soon.</span>`;
+                        successModal.classList.add('active');
+                    });
+            }
+        });
+
+        // Close Modal Logic
+        const closeModal = () => {
+            successModal.classList.remove('active');
+        };
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+
+        // Close on outside click
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeModal();
+            }
+        });
+    }
 });
 
 // Scroll Animations

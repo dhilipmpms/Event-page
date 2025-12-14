@@ -4,29 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Élan Events</title>
+    <title>Gallery | Maansarovar Events</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
 
 <body>
     <!-- Navigation -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">MAANSAROVAR EVENTS</a>
+            <a href="index.html" class="logo">MAANSAROVAR</a>
 
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#plans" class="nav-link">Plans</a>
+                <a href="index.html#plans" class="nav-link">Events</a>
                 <a href="gallery.html" class="nav-link active">Gallery</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <!-- <a href="index.html#register" class="nav-link">Register</a> -->
-                <a href="index.html#contact" class="nav-link">Contact</a>
-                <a href="index.html#contact" class="btn btn-outline">Book a Call</a>
+                <a href="https://wa.me/7200929942?text=Hi%2C%20I%27m%20interested%20in%20your%20event%20planning%20services"
+                    class="nav-link" target="_blank">Contact Us</a>
+                <a href="index.html#register" class="btn btn-outline btn-header-cta">
+                    <span class="btn-text-main">Register in </span>
+                    <span class="btn-text-sub"> WhatsApp <i class="fa fa-whatsapp" style="font-size:18px"></i></span>
+                </a>
             </nav>
 
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
@@ -44,7 +48,12 @@
                 <a href="gallery.html" class="mobile-nav-link active">Gallery</a>
                 <a href="index.html#about" class="mobile-nav-link">About</a>
                 <a href="index.html#register" class="mobile-nav-link">Register</a>
-                <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+                <a href="https://wa.me/7200929942?text=Hi%2C%20I%27m%20interested%20in%20your%20event%20planning%20services"
+                    class="mobile-nav-link" target="_blank">Contact Us</a>
+                <a href="index.html#register" class="btn btn-outline btn-header-cta">
+                    <span class="btn-text-main">Register in </span>
+                    <span class="btn-text-sub"> WhatsApp <i class="fa fa-whatsapp" style="font-size:18px"></i></span>
+                </a>
             </nav>
         </div>
     </header>
@@ -64,56 +73,108 @@
             </div>
         </section>
 
+        <!-- Featured Video -->
+        <section class="video-section">
+            <div class="container">
+                <div class="video-wrapper">
+                    <video src="images/featured-event.mp4" controls autoplay muted loop playsinline></video>
+                </div>
+            </div>
+        </section>
+
         <!-- Gallery Grid -->
         <section class="gallery-section">
             <div class="container">
                 <div class="gallery-grid">
                     <!-- Gallery Item 1 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1519225469958-19e5db4109f4?w=800&q=80"
-                            alt="Wedding reception setup" class="gallery-image">
+                        <img src="images/gallery-img-1.jpg" alt="Event Moment" class="gallery-image">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-caption">Elegant Wedding Reception</h3>
+                            <h3 class="gallery-caption">Event Moment</h3>
                         </div>
                     </div>
                     <!-- Gallery Item 2 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&q=80"
-                            alt="Outdoor evening event" class="gallery-image">
+                        <img src="images/gallery-img-2.jpg" alt="Event Moment" class="gallery-image">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-caption">Starlit Evening Gala</h3>
+                            <h3 class="gallery-caption">Event Moment</h3>
                         </div>
                     </div>
                     <!-- Gallery Item 3 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&q=80"
-                            alt="Corporate conference" class="gallery-image">
+                        <img src="images/gallery-img-3.jpg" alt="Event Moment" class="gallery-image">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-caption">Corporate Summit</h3>
+                            <h3 class="gallery-caption">Event Moment</h3>
                         </div>
                     </div>
                     <!-- Gallery Item 4 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80"
-                            alt="Birthday celebration" class="gallery-image">
+                        <img src="images/gallery-img-4.jpg" alt="Event Moment" class="gallery-image">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-caption">Milestone Celebration</h3>
+                            <h3 class="gallery-caption">Event Moment</h3>
                         </div>
                     </div>
                     <!-- Gallery Item 5 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80"
-                            alt="Fashion show runway" class="gallery-image">
+                        <img src="images/gallery-img-5.jpg" alt="Event Moment" class="gallery-image">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-caption">Fashion Runway</h3>
+                            <h3 class="gallery-caption">Event Moment</h3>
                         </div>
                     </div>
                     <!-- Gallery Item 6 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?w=800&q=80"
-                            alt="Private dinner party" class="gallery-image">
+                        <img src="images/gallery-img-6.jpg" alt="Event Moment" class="gallery-image">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-caption">Intimate Dinner</h3>
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 7 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-7.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 8 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-8.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 9 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-9.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 10 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-10.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 11 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-11.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 12 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-12.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 13 -->
+                    <div class="gallery-item">
+                        <img src="images/gallery-img-13.jpg" alt="Event Moment" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-caption">Event Moment</h3>
                         </div>
                     </div>
                 </div>
@@ -133,15 +194,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <a href="index.html" class="logo footer-logo">Élan Events</a>
+                <a href="index.html" class="logo footer-logo">MAANSAROVAR</a>
 
                 <nav class="footer-nav">
                     <a href="index.html">Home</a>
-                    <a href="index.html#plans">Plans</a>
+                    <a href="index.html#plans">Events</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="index.html#about">About</a>
                     <a href="index.html#register">Register</a>
-                    <a href="index.html#contact">Contact</a>
+                    <a href="https://wa.me/7200929942?text=Hi%2C%20I%27m%20interested%20in%20your%20event%20planning%20services"
+                        target="_blank">Contact Us</a>
                 </nav>
 
                 <div class="social-links">
@@ -160,7 +222,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Élan Events. All rights reserved.</p>
+                <p>&copy; 2025 MAANSAROVAR. All rights reserved.</p>
             </div>
         </div>
     </footer>
