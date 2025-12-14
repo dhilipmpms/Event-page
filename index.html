@@ -261,15 +261,17 @@
                     <h3 class="form-title">Send us a Message</h3>
                     <form id="contactForm" class="contact-form" action="submit.php" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name"
-                                required>
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="Your Full Name (e.g., Rajesh Kumar)" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="mobile" name="mobile" class="form-input" placeholder="Mobile Number"
-                                required>
+                            <input type="tel" id="mobile" name="mobile" class="form-input"
+                                placeholder="Mobile Number (e.g., 9876543210)" pattern="[0-9]{10}" maxlength="10"
+                                title="Please enter exactly 10 digits" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="city" name="city" class="form-input" placeholder="City" required>
+                            <input type="text" id="city" name="city" class="form-input"
+                                placeholder="Your City (e.g., Chennai)" required>
                         </div>
                         <button type="submit" class="btn btn-primary w-full">Submit</button>
                     </form>
@@ -449,6 +451,17 @@
             <h3 class="modal-title">Thank You!</h3>
             <p class="modal-message" id="modalMessage">Your message has been sent successfully.</p>
             <button class="btn btn-primary btn-modal-close" id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span id="toastMessage">Message</span>
         </div>
     </div>
 

@@ -128,6 +128,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                                 $rows = array_reverse($rows);
 
                                 if (count($rows) > 0) {
+                                    $rowNumber = 1; // Sequential counter
                                     foreach ($rows as $row) {
                                         // Ensure row has expected number of columns to avoid offset errors
                                         // Format: ID, Full Name, Phone, City, Timestamp
@@ -137,13 +138,27 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                                         $city = isset($row[3]) ? $row[3] : '';
                                         $date = isset($row[4]) ? $row[4] : '';
 
+                                        // Convert date to IST (Indian Standard Time)
+                                        $formattedDate = '';
+                                        if ($date !== '') {
+                                            try {
+                                                $dateObj = new DateTime($date);
+                                                $dateObj->setTimezone(new DateTimeZone('Asia/Kolkata'));
+                                                $formattedDate = $dateObj->format('d M Y, h:i A');
+                                            } catch (Exception $e) {
+                                                $formattedDate = htmlspecialchars($date);
+                                            }
+                                        }
+
                                         echo "<tr>";
-                                        echo "<td>" . htmlspecialchars($id) . "</td>";
+                                        echo "<td>" . $rowNumber . "</td>"; // Sequential number instead of unique ID
                                         echo "<td class='fw-medium'>" . htmlspecialchars($name) . "</td>";
                                         echo "<td>" . htmlspecialchars($phone) . "</td>";
                                         echo "<td>" . ($city !== "" ? htmlspecialchars($city) : "<em>Empty</em>") . "</td>";
-                                        echo "<td class='text-muted'>" . htmlspecialchars($date) . "</td>";
+                                        echo "<td class='text-muted'>" . $formattedDate . "</td>";
                                         echo "</tr>";
+
+                                        $rowNumber++; // Increment counter
                                     }
                                 } else {
                                     echo "<tr><td colspan='5' class='text-center p-4'>No bookings found</td></tr>";

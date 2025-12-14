@@ -130,6 +130,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModal');
     const modalMessage = document.getElementById('modalMessage');
+    const mobileInput = document.getElementById('mobile');
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    // Toast notification function
+    function showToast(message) {
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 4000); // Auto-hide after 4 seconds
+    }
+
+    // Real-time phone number validation (only filter non-numeric)
+    if (mobileInput) {
+        mobileInput.addEventListener('input', (e) => {
+            // Remove non-numeric characters
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+    }
 
     if (contactForm && successModal) {
         contactForm.addEventListener('submit', (e) => {
@@ -139,6 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value;
             const mobile = document.getElementById('mobile').value;
             const city = document.getElementById('city').value;
+
+            // Validate phone number (exactly 10 digits)
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                showToast('Please enter a valid 10-digit mobile number');
+                mobileInput.focus();
+                return false;
+            }
 
             if (name && mobile && city) {
                 const formData = new FormData(contactForm);

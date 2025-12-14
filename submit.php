@@ -15,7 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (empty($full_name) || empty($phone) || empty($city)) {
+        $response['success'] = false;
         $response['message'] = "Please fill in all required fields. Received: Name=$full_name, Phone=$phone, City=$city";
+        echo json_encode($response);
+        exit();
+    }
+
+    // Validate phone number (must be exactly 10 digits)
+    if (!preg_match('/^[0-9]{10}$/', $phone)) {
+        $response['success'] = false;
+        $response['message'] = "Invalid phone number. Please enter exactly 10 digits.";
         echo json_encode($response);
         exit();
     }
